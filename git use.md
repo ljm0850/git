@@ -22,11 +22,9 @@
   - 이미 git 저장소인 폴더 내에 또 다른 git 저장소를 만들지 않는다.
   - home dir에서 사용시 복잡해질수 있다.
 
-|      |                                                              | 로컬 저장소(git)                         |      |
-| ---- | ------------------------------------------------------------ | ---------------------------------------- | ---- |
-|      | ![img](file:///C:/Users/ljm/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png) |                                          |      |
-|      |                                                              | ![img](git use.assets/clip_image002.png) |      |
-|      |                                                              |                                          |      |
+
+
+##### (Woking Directory -> Staging Area -> Commits)순서로 이동
 
 ### git status
 
