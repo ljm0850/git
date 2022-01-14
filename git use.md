@@ -61,7 +61,7 @@
 
 - commit 된 파일을 원격 저장소에 올림
 
-- `$ git push -u <저장소 이름 orgin> <브랜드 이름 master>`
+- `$ git push -u <저장소 이름 orgin> <브랜치 이름 master>`
 
   
 
@@ -80,7 +80,7 @@
 - `git clone <주소>` 
 - 원격 저장소의 commit 내역을 가져와 로컬 저장소를 생성
 - 주의사항
-  1. git init, git remote add가 원격 저장소에 올릴때 수행했으므로 이미 적용되어있음
+  1. git init, git remote add가 이미 적용되어있음
   2. desktop/til 이라는  폴더에 til이름의 폴더를 받을시 desktop/til/til 폴더가 생성이됨
 
 - `git clone 주소 abc`으로 입력시 abc라는 폴더로 생성
@@ -90,7 +90,7 @@
 ### git pull
 
 - 원격 저장소의 변경 사항을 가져와서 로컬 저장소를 업데이트 하는 명령어
-- `$ git pull <저장소이름><브랜드 이름>`
+- `$ git pull <저장소이름><브랜치 이름>`
 - `$ git pull origin master`
 - pull 하기 전에 commit 해서 같은 라인 충돌시 어느 내용을 반영할지 선택해야함
 
@@ -113,3 +113,13 @@
 - 현재 브랜치에서 다른 브랜치로 head를 이동시키는 명령어
 - `$ git switch <브랜치이름>`
 - 주의사항 : test.txt를 만들고 git add를 하지 않은 상태에서 다른 브랜치로 스위치시 스위치한 폴더에 test.txt가 생성됨
+
+### git checkout <브랜치 이름>
+
+### git merge `<commit>`     브랜치 병합
+
+
+
+### code . 
+
+- 그 폴더에서 code 실행
