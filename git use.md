@@ -123,3 +123,9 @@
 ### code . 
 
 - 그 폴더에서 code 실행
+
+
+
+### python -m unittest `___`.py
+
+- python에서 unittest module로 `____`.py를 테스트
