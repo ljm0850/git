@@ -44,8 +44,10 @@
 ### git log 
 
 - git의 log 확인
-
 - `$ git log --oneline` 현재 헤더,커밋 파악 가능
+  - `$ git log --oneline --all` :  현재 선택된 브랜치가 과거 버전일 경우 전체 log 파악하기 위해 사용
+  - `$ git log --oneline --all --graph`: 버전이 갈라진 경우 그래프로 표시
+
 
 ### git remote
 
@@ -103,7 +105,7 @@
 - `$ git branch -r` 원격 저장소의 브랜치 목록 확인
 - `$ git branch <브랜치이름>` 새로운 브랜치 생성
 - `$ git branch <브랜치이름><커밋 ID>` 특정 커밋 기준으로 브랜치 생성
-- `$ git branch -d <브랜치이름>` 병합된 브랜치 삭제
+- `$ git branch -d <브랜치이름>` 병합된 브랜치 삭제(병합이 안되있을 경우 삭제 불가)
 - `$ git branch -D <브랜치이름>` 브랜치 강제 삭제
 
 
@@ -112,6 +114,8 @@
 
 - 현재 브랜치에서 다른 브랜치로 head를 이동시키는 명령어
 - `$ git switch <브랜치이름>`
+  - `$ git switch -c <브랜치이름>` : 생성과 동시에 이동
+
 - 주의사항 : test.txt를 만들고 git add를 하지 않은 상태에서 다른 브랜치로 스위치시 스위치한 폴더에 test.txt가 생성됨
 
 ### git checkout <브랜치 이름>
