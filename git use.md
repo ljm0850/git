@@ -96,7 +96,7 @@
 - `$ git pull origin master`
 - pull 하기 전에 commit 해서 같은 라인 충돌시 어느 내용을 반영할지 선택해야함
 
-
+----
 
 ### branch
 
@@ -107,6 +107,14 @@
 - `$ git branch <브랜치이름><커밋 ID>` 특정 커밋 기준으로 브랜치 생성
 - `$ git branch -d <브랜치이름>` 병합된 브랜치 삭제(병합이 안되있을 경우 삭제 불가)
 - `$ git branch -D <브랜치이름>` 브랜치 강제 삭제
+
+#### 전체 사이클
+
+- git push orgin(저장소 이름) master(브랜치 이름) -> git push origin <브랜치이름>
+
+- 병합(Merge) => master 가 버전 up
+- 개인들이 master 브랜치로 이동, 병합된 master를 pull 
+- 기존에 가지고 있던 branch 삭제
 
 
 
@@ -122,7 +130,7 @@
 
 ### git merge `<commit>`     브랜치 병합
 
-
+----
 
 ### code . 
 
@@ -133,3 +141,85 @@
 ### python -m unittest `___`.py
 
 - python에서 unittest module로 `____`.py를 테스트
+
+-----
+
+### git restore 파일.확장자 
+
+- 수정되기 전(마지막 commit)으로 덮어씌우기
+
+
+
+### git rm --cached 파일.확장자
+
+- git add 이후 Staging Area 에 올라간 파일을 내리는 기능(unstaging)
+- commit을 한적이 없을 경우 사용 
+
+
+
+### git restore --staged 파일.확장자
+
+- git add 이후 Staging Area 에 올라간 파일을 내리는 기능(unstaging)
+
+- commit을 한 적이 있을 경우 사용
+
+- git rm --cached 와 같은 기능
+
+
+
+### git commit --amend
+
+- 커밋 메세지만 수정
+  - 마지막 커밋한 뒤 수정한 것이 없을 경우 커밋 메세지 변경 가능
+- 이전 커밋 덮어쓰기
+  - Staging Area에 새로 올라온 것이 있을 경우
+
+- 실행시 명령모드<->입력모드 
+  - i 키를 눌러 입력모드로 변경, esc로 명령모드로 돌아오기 가능
+- `:wq ` 
+  - git commit --amend 종료
+
+
+
+--------
+
+### git reset
+
+` $ git reset [옵션] <커밋id>` 
+
+- 예전 버전으로 돌아갈 때 사용
+
+- 해당 커밋 이후 쌓아둔 커밋이 전부 사라짐
+
+
+
+#### 옵션
+
+1. `--soft`
+   - 해당 시점 이후의 commit된 파일들을 **staging area** 로 돌려놓음(add가 된 상태)
+
+2. `--mixed`
+   - default 값
+   - 해당 시점 이후의 commit된 파일들을 working directory로 돌려놓음(add 하기 전 상태)
+
+3. `--hard`
+   - 해당 시점 이후의 commit된 파일(git 에서 관리한)들을 working directory에서 삭제
+
+
+
+#### git reflog
+
+- 이미 삭제한 커밋으로 돌아갈 수 있음(그 전 commit id가 표시가 됨)
+- git reset --hard 하더라도 사용 가능
+
+
+
+### git revert
+
+`$ git revert <커밋 id>`
+
+- git reset은 과거로 돌아가면 커밋 내역이 사라져서 협동 프로젝트에서 문제가 발생 할 수 있음
+
+- 특정 사건을 없었던 일로 만듬, 이전 커밋을 취소한다는 커밋을 새롭게 만듬
+
+- 1,2,3번 커밋중에서 2번 커밋 선택시 2번 커밋을 없던일로 처리 (1,3번 커밋은 유지)
